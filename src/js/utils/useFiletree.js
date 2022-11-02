@@ -340,12 +340,6 @@ export const useFiletree = () => {
     [fileTree]
   );
 
-  const getSharedUrl = (id) => {
-    const n = getNode(id);
-
-    return getFileUrl(browserOnly ? n["original_id"] : n["id"]);
-  };
-
   const uploadToTree = () => {
     alert("uploading not available in browser only mode");
   };
