@@ -50,16 +50,16 @@ const Container = styled.div`
 `;
 
 const NavigationPanel = styled.div`
-  @media ${mediaWidth("min", 768)} {
+  @media ${mediaWidth("min", 769)} {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     box-sizing: border-box;
-  
-    borderRight: 1px solid ${({ theme }) =>
-      theme.palette.divider || "transparent"};
-    boxSizing: "border-box",
+
+    borderright: 1px solid
+      ${({ theme }) => theme.palette.divider || "transparent"};
+    boxsizing: "border-box";
     width: ${({ theme }) => theme.nav_box.width + "px" || "auto"};
     height: ${({ theme }) => theme.nav_box.height + "px" || "100%"};
   }

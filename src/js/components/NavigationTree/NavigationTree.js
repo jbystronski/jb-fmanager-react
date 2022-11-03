@@ -219,6 +219,7 @@ export const MemoNavigationTree = ({ fileTree, ...props }) => {
         {fileTree && Object.keys(fileTree).length ? (
           <NavigationContext>
             <Tree
+              id="tree"
               treeWalker={treeWalker}
               itemSize={28}
               height={theme.nav_box.height - theme.navGutter.height - 12}
@@ -229,6 +230,7 @@ export const MemoNavigationTree = ({ fileTree, ...props }) => {
           </NavigationContext>
         ) : (
           <div
+            id="spinner_wrap"
             style={{
               width: "100%",
               height: "100%",
