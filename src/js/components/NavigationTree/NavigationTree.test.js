@@ -1,10 +1,10 @@
 import React from "react";
 
 import { render, screen } from "@testing-library/react";
-import NavigationTree from ".";
+import { NavigationTree } from "../NavigationTree";
 import { renderWithProviders } from "../../utils/test_utils/renderWithProviders";
 
-import AppProvider from "@provider/AppProvider";
+import { AppProvider } from "../../providers";
 
 const mockFileTree = {
   root: {

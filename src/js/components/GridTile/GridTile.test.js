@@ -1,7 +1,7 @@
 import React from "react";
 
 import { render, screen } from "@testing-library/react";
-import GridTile from ".";
+import { GridTile } from "../GridTile";
 import { renderWithProviders } from "../../utils/test_utils/renderWithProviders";
 
 test("renders grid tile", () => {

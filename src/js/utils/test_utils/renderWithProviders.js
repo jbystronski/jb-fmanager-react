@@ -1,5 +1,5 @@
 import React from "react";
-import { defaultDarkTheme } from "@helpers";
+import { defaultDarkTheme } from "../../helpers";
 
 import {
   FullscreenImageProvider,
@@ -7,7 +7,7 @@ import {
   ConfigProvider,
   DarkModeProvider,
   ThemeProvider,
-} from "@providers";
+} from "../../providers";
 
 export const renderWithProviders = (ui) => {
   return (

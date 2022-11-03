@@ -1,7 +1,7 @@
 import React from "react";
 
 import { render, screen } from "@testing-library/react";
-import SearchBar from ".";
+import { SearchBar } from "../SearchBar";
 import { SearchProvider } from "@providers";
 
 import { renderWithProviders } from "../../utils/test_utils/renderWithProviders";

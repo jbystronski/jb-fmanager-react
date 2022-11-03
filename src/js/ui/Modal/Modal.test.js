@@ -1,8 +1,8 @@
 import React from "react";
 
 import { render, screen } from "@testing-library/react";
-import Modal from "./Modal";
-import { renderWithProviders } from "../../../__tests__/test_utils/renderWithProviders";
+import { Modal } from "./Modal";
+import { renderWithProviders } from "../../utils/test_utils/renderWithProviders";
 
 test("renders modal", () => {
   render(
