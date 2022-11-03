@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect, useMemo } from "react";
 export const DarkModeContext = createContext(null);
 
 export const DarkModeProvider = ({ parentDarkMode, ...props }) => {
-  const [darkMode, setDarkMode] = useState(parentDarkMode);
+  const [darkMode, setDarkMode] = useState(parentDarkMode || false);
 
   const modeKey = "rfm_dmode";
 

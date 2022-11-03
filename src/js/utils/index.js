@@ -16,6 +16,7 @@ import { useFileshare } from "./useFileshare";
 import { useDarkMode } from "./useDarkMode";
 import { useSearch } from "./useSearch";
 import { useFullscreenImage } from "./useFullscreenImage";
+import { useUrls } from "./useUrls";
 
 export {
   useCancellablePromises,
@@ -35,4 +36,5 @@ export {
   useDarkMode,
   useSearch,
   useFullscreenImage,
+  useUrls,
 };

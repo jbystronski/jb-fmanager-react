@@ -10,7 +10,7 @@ import { getGridSize } from "@helpers";
 export const SharedFiles = () => {
   const { shared } = useFileshare();
   const { syncShared, getNode } = useApp();
-  const [gridSize, setGridSize] = useState(getGridSize["m"]);
+  const [gridSize] = useState(getGridSize["m"]);
 
   const btns = [
     {

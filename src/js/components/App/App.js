@@ -13,20 +13,20 @@ import { Manager } from "../Manager";
 
 export const App = ({
   stackIndex = 5000,
-  id: containerId,
-  isOpen,
+  id = "jb_fmanager",
+  isOpen = false,
   onClose,
-  browserOnly,
+  browserOnly = false,
   host,
   mount,
-  mountAlias,
+  mountAlias = "",
   maxUploadSize,
-  namespace,
+  namespace = "api/fm",
   lightTheme = {},
   darkTheme = {},
-  parentDarkMode,
+  parentDarkMode = false,
 }) => {
-  const { invokePortal, revokePortal } = usePortal(containerId, stackIndex);
+  const { invokePortal, revokePortal } = usePortal(id, stackIndex);
 
   return (
     <DarkModeProvider parentDarkMode={parentDarkMode}>

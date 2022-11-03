@@ -346,12 +346,9 @@ export const useFiletree = () => {
 
   return {
     ...memoized,
-
     createFolder,
-
     current,
     currentView,
-
     dropFiles,
     getNode,
     setupTree,
@@ -362,19 +359,14 @@ export const useFiletree = () => {
     isRoot,
     navigate,
     pasteFiles,
-
     remove,
     rename,
     root,
-
     setCurrentView,
-
     selected,
-
     isShared,
     share,
     unshare,
-
     syncShared,
   };
 };
