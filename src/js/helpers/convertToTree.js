@@ -7,7 +7,7 @@ export function convertToTree(arr, focus = null) {
       data.forEach((el) => {
         const n = new Node({
           id: el.id,
-          tracker: Symbol(),
+
           original_id: el.original_id,
           parent_id: parent.id,
           dir: el.dir,

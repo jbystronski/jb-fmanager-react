@@ -3,7 +3,7 @@ export class Node {
     id,
 
     original_id = null,
-    tracker,
+
     parent_id = null,
     children = [],
     dir = false,
@@ -12,7 +12,7 @@ export class Node {
     this.id = id;
 
     this.original_id = original_id || id;
-    this.tracker = tracker;
+
     this.parent_id = parent_id;
     this.dir = dir;
 
@@ -56,13 +56,13 @@ export class Tree {
     yield node;
   }
 
-  insert({ parentNodeId, id, originalId, tracker, children = [], dir, info }) {
+  insert({ parentNodeId, id, originalId, children = [], dir, info }) {
     for (let node of this.preOrderTraversal()) {
       if (node.id === parentNodeId) {
         const newNode = new Node({
           id,
           original_id: originalId,
-          tracker,
+
           parent_id: node.id,
           children,
           dir,
