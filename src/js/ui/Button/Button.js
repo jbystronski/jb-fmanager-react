@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { TextNode } from "../TextNode/TextNode";
-import { ButtonBase } from "../ButtonBase/ButtonBase";
+import { TextNode } from "../TextNode";
+import { ButtonBase } from "../ButtonBase";
 
 const B = styled(ButtonBase)`
   border-radius: 8px;

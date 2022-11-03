@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SvgIcon } from "../SvgIcon/SvgIcon";
+import { SvgIcon } from "../SvgIcon";
 
 const C = styled(SvgIcon)`
   cursor: pointer;

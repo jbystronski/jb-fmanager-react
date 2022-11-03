@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import { TextNode } from "../TextNode/TextNode";
-import { SvgIcon } from "../SvgIcon/SvgIcon";
-import { ButtonBase } from "../ButtonBase/ButtonBase";
+import { TextNode } from "../TextNode";
+import { SvgIcon } from "../SvgIcon";
+import { ButtonBase } from "../ButtonBase";
 
 const TreeLeafComponent = styled.span`
   padding: 0px;

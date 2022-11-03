@@ -1,8 +1,8 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
 
-import { TextNode } from "../TextNode/TextNode";
-import { SvgIcon } from "../SvgIcon/SvgIcon";
+import { TextNode } from "../TextNode";
+import { SvgIcon } from "../SvgIcon";
 
 const List = styled.ul`
   list-style-type: none;

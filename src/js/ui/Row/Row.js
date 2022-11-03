@@ -3,8 +3,8 @@ import styled, { useTheme } from "styled-components";
 
 import { isImage, resolveFileIcon } from "@helpers";
 
-import { SvgIcon } from "../SvgIcon/SvgIcon";
-import { TextNode } from "../TextNode/TextNode";
+import { SvgIcon } from "../SvgIcon";
+import { TextNode } from "../TextNode";
 
 const C = styled.div`
   width: ${(props) => props.width || "98%"};

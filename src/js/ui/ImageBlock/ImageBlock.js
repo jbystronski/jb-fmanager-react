@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { GraphicsBlock } from "../GraphicsBlock/GraphicsBlock";
-import { IconBlock } from "../IconBlock/IconBlock";
+import { GraphicsBlock } from "../GraphicsBlock";
+import { IconBlock } from "../IconBlock";
 
 const Image = styled.img`
   max-width: 100%;

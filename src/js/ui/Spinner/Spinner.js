@@ -1,5 +1,5 @@
 import React from "react";
-import { SvgIcon } from "../SvgIcon/SvgIcon";
+import { SvgIcon } from "../SvgIcon";
 
 import styled, { keyframes } from "styled-components";
 

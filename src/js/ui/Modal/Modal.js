@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes, useTheme } from "styled-components";
 
-import { EnhancedInput } from "../EnhancedInput/EnhancedInput";
-import { TextNode } from "../TextNode/TextNode";
-import { InteractiveIcon } from "../InteractiveIcon/InteractiveIcon";
-import { Button } from "../Button/Button";
+import { EnhancedInput } from "../EnhancedInput";
+import { TextNode } from "../TextNode";
+import { InteractiveIcon } from "../InteractiveIcon";
+import { Button } from "../Button";
 
 const fadeIn = keyframes`
 0% {

@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
-import { TextNode } from "../TextNode/TextNode";
+import { TextNode } from "../TextNode";
 
 const Overlay = styled.div`
   position: absolute;

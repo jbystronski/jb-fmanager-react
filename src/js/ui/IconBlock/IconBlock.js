@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { SvgIcon } from "../SvgIcon/SvgIcon";
-import { GraphicsBlock } from "../GraphicsBlock/GraphicsBlock";
+import { SvgIcon } from "../SvgIcon";
+import { GraphicsBlock } from "../GraphicsBlock";
 
 const I = ({ className, children, ...props }) => (
   <i className={className} {...props}>
