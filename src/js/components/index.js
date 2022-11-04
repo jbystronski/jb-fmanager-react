@@ -1,8 +1,8 @@
 export * from "./App";
-export { BottomBar } from "./BottomBar";
-export { ControlBar } from "./ControlBar";
-export { Display } from "./Display";
-export { Dock } from "./Dock";
+export * from "./BottomBar";
+export * from "./ControlBar";
+export * from "./Display";
+export * from "./Dock";
 export * from "./DragBoard";
 export * from "./EmptyDisplay";
 export * from "./File";
