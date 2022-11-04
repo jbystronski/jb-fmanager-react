@@ -1,6 +1,6 @@
 {
   "name": "@jb_fmanager/react",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "file manager component for react applications",
   "repository": "jbystronski/jb-fmanager-react",
   "main": "./dist/main.js",
