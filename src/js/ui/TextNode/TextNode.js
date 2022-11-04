@@ -2,33 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { addProps } from "@helpers";
 
-const Text = (props) => {
-  return addProps(
-    {
-      p: <P />,
-      span: <Span />,
-      h1: <H1 />,
-      h2: <H2 />,
-      h3: <H3 />,
-      h4: <H4 />,
-      input: <Input />,
-    }[props.variant],
-    { ...props }
-  );
-};
-
-const Component = styled(Text).attrs(({ fontSize, ...props }) => ({
-  variant: props.variant || "p",
-
-  ...props,
-}))`
-  margin: 0;
-  font-family: ${({ theme }) => theme.fontFamily};
-  font-size: ${({ theme, $scale }) => theme.base * $scale + "px" || "auto"};
-  color: ${(props) => props.color || props.theme.palette.font1};
-`;
-
-const P = styled.p`
+const P = styled("p")`
   margin: 0px;
 `;
 
@@ -64,6 +38,32 @@ const Input = styled.input.attrs(({ value, placeholder = "", ...props }) => ({
     outline: none;
     border: none;
   }
+`;
+
+const Text = (props) => {
+  return addProps(
+    {
+      p: <P />,
+      span: <Span />,
+      h1: <H1 />,
+      h2: <H2 />,
+      h3: <H3 />,
+      h4: <H4 />,
+      input: <Input />,
+    }[props.variant],
+    { ...props }
+  );
+};
+
+const Component = styled(Text).attrs((props) => ({
+  variant: props.variant || "p",
+
+  ...props,
+}))`
+  margin: 0;
+  font-family: ${({ theme }) => theme.fontFamily};
+  font-size: ${({ theme, $scale }) => theme.base * $scale + "px" || "auto"};
+  color: ${(props) => props.color || props.theme.palette.font1};
 `;
 
 export const TextNode = ({ variant, color, scale = 1, children, ...props }) => {

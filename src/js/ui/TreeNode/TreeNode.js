@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import { TextNode } from "../TextNode";
 import { SvgIcon } from "../SvgIcon";
-import { ButtonBase } from "../ButtonBase";
 
 const TreeLeafComponent = styled.span`
   padding: 0px;
@@ -17,7 +16,12 @@ const TreeLeafComponent = styled.span`
   color: inherit;
 `;
 
-const LeafBase = styled(ButtonBase)`
+const LeafBase = styled.button`
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  background: none;
   text-align: left;
   display: flex;
   flex-direction: row;

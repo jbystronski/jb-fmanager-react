@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { TextNode } from "../TextNode";
-import { ButtonBase } from "../ButtonBase";
 
-const B = styled(ButtonBase)`
+const B = styled.button`
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  background: none;
   border-radius: 8px;
   color: ${({ theme }) => theme.palette.font4};
   width: ${(props) => props.width || "100px"};
