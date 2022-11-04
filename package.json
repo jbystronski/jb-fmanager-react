@@ -3,17 +3,22 @@
   "version": "1.0.6",
   "description": "file manager component for react applications",
   "repository": "jbystronski/jb-fmanager-react",
-  "main": "./dist/main.js",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "exports": {
+    "require": "./dist/bundle.cjs.js",
+    "import": "./dist/bundle.esm.js"
+  },
   "files": [
     "dist"
   ],
   "author": "Jakub Bystroński",
   "license": "MIT",
   "scripts": {
-    "watch": "NODE_ENV=development ./node_modules/.bin/rollup -c -w",
-    "build": "NODE_ENV=production ./node_modules/.bin/rollup -c",
-    "prepublish": "NODE_ENV=production rm -rf dist && ./node_modules/.bin/rollup -c",
-    "test": "./node_modules/.bin/jest"
+    "watch": "NODE_ENV=development rollup -c -w",
+    "build": "NODE_ENV=poduction rollup -c",
+    "prepublishOnly": "NODE_ENV=production rm -rf dist && rollup -c",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
@@ -35,14 +40,17 @@
     "jest-cli": "^28.1.3",
     "jest-environment-jsdom": "^28.1.3",
     "react-dom": "^18.0.0",
+    "react": "^18.0.0",
     "rollup": "^2.79.1",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-import-css": "^3.0.3",
     "rollup-plugin-node-externals": "^5.0.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4"
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "peerDependencies": {
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react": "^18.0.0"
   },
   "dependencies": {
     "react-click-away-listener": "^2.2.2",
