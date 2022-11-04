@@ -1,7 +1,7 @@
-import { useTheme } from "styled-components";
+import { useTheme as styledTheme } from "styled-components";
 
 export const usePortal = (anchorTag, stackIndex) => {
-  const t = useTheme();
+  const t = styledTheme();
 
   const invokePortal = () => {
     let portal = document.getElementById(anchorTag);
