@@ -23,12 +23,12 @@ export default {
     {
       file: pkgJson.module,
       format: "esm",
-      sourcemap: true,
+      sourcemap: devMode,
     },
     {
       file: pkgJson.main,
       format: "cjs",
-      sourcemap: true,
+      sourcemap: devMode,
     },
   ],
   plugins: [
@@ -45,15 +45,14 @@ export default {
         };
       }),
     }),
-
     css(),
     resolve(),
     babel({
       babelHelpers: "runtime",
-
       exclude: /^(.+\/)?node_modules\/.+$/,
       presets: ["@babel/preset-env", "@babel/preset-react"],
       extensions: [".js", ".jsx"],
     }),
+    terser(),
   ],
 };
