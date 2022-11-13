@@ -1,6 +1,6 @@
 {
   "name": "@jb_fmanager/react",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "file manager component for react applications",
   "repository": "jbystronski/jb-fmanager-react",
   "main": "dist/bundle.cjs.js",
