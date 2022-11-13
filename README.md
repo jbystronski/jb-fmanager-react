@@ -208,10 +208,14 @@ jb-fmanager-koa</a>
 
 <p style="font-size: 15px">Out of the box working route setups. Some additional steps might be required on you part (cors, static serving), but you might have that already. The list should extend over time.</p>
 
-<h6>Bare bones utility package:</h6>
+<h6>Service packages:</h6>
 
 <a style="font-size: 15px;" href="https://github.com/jbystronski/jb-fmanager-node-utils">jb-fmanager-node-utils</a>
 
-<p style="font-size: 15px">This is the essential package that supports the incoming requests in nodejs environment. It comes down to matching the API the module exposes to a specific route built according to your framework's specification.</p>
+<p style="font-size: 15px">Build for communicating with node filesystem (server storage).</p>
+
+<a style="font-size: 15px;" href="https://github.com/jbystronski/jb-fmanager-s3">jb-fmanager-s3</a>
+
+<p style="font-size: 15px">Build for communicating with AWS S3 cloud storage.</p>
 
 </div>
