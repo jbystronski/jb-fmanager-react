@@ -18,7 +18,6 @@ export const App = ({
   onClose,
   browserOnly = false,
   host,
-  mount,
   mountAlias = "",
   maxUploadSize,
   namespace = "api/fm",
@@ -40,7 +39,6 @@ export const App = ({
           host={host || window.location.origin}
           namespace={namespace}
           maxUploadSize={maxUploadSize}
-          mount={mount}
           mountAlias={mountAlias}
         >
           <AppProvider>

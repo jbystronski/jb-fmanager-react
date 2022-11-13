@@ -5,7 +5,6 @@ import { ConfigContext } from "./ConfigContext";
 export const ConfigProvider = ({
   host,
   browserOnly,
-  mount,
   mountAlias,
   namespace,
   maxUploadSize,
@@ -17,7 +16,6 @@ export const ConfigProvider = ({
         () => ({
           host,
           browserOnly,
-          mount,
           mountAlias,
           namespace,
           maxUploadSize,

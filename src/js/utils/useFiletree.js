@@ -21,7 +21,7 @@ export const useFiletree = () => {
 
   const [currentView, setCurrentView] = useState(LIST);
   const { shared, setShared } = useFileshare();
-  const { browserOnly, mount, mountAlias, namespace, host } = useConfig();
+  const { browserOnly, mountAlias, namespace, host } = useConfig();
 
   useEffect(() => {
     createTree();
@@ -62,9 +62,11 @@ export const useFiletree = () => {
 
     if (!n) return null;
 
+    const isMediaExternal =
+      mountAlias.startsWith("http") || mountAlias.startsWith("localhost");
+
     return normalizePath(
-      host,
-      mountAlias,
+      isMediaExternal ? mountAlias : host,
       n[shareKey].split(root?.id).join("")
     );
   };
@@ -87,9 +89,6 @@ export const useFiletree = () => {
     try {
       const data = await apiCall({
         endpoint: normalizePath(host, namespace, "map"),
-        params: {
-          path: mount,
-        },
       });
 
       setupTree(focusedNode, data);
@@ -135,6 +134,28 @@ export const useFiletree = () => {
     setupTree(parent);
     setCurrentView(LIST);
     return parent.id;
+  };
+
+  const pasteFiles = async (destinationKey, remove = false) => {
+    if (!destinationKey || !selected.length) return false;
+
+    const destNode = getNode(destinationKey);
+
+    if (!destNode.dir) return false;
+
+    let paths = removeRedundantSelections(selected, destNode);
+
+    paths = removeFalsyNodes(paths, destNode);
+
+    move(paths, destNode, remove);
+
+    browserOnly && setupTree(destNode.id);
+    setCurrentView(LIST);
+
+    if (deleteOrigin) setDeleteOrigin(false);
+    if (selected.length) setSelected([]);
+
+    return paths;
   };
 
   const rename = async (treeNode, newName) => {
@@ -309,28 +330,6 @@ export const useFiletree = () => {
     }
 
     pasteFiles(target, true);
-  };
-
-  const pasteFiles = async (destinationKey, remove = false) => {
-    if (!destinationKey || !selected.length) return false;
-
-    const destNode = getNode(destinationKey);
-
-    if (!destNode.dir) return false;
-
-    let paths = removeRedundantSelections(selected, destNode);
-
-    paths = removeFalsyNodes(paths, destNode);
-
-    move(paths, destNode, remove);
-
-    setupTree(destNode.id);
-    setCurrentView(LIST);
-
-    if (deleteOrigin) setDeleteOrigin(false);
-    if (selected.length) setSelected([]);
-
-    return paths;
   };
 
   const memoized = useMemo(
