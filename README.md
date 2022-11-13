@@ -119,18 +119,11 @@ const App = () => {
                 <td>Data provider</td>
         </tr>
             <tr>
-            <td>mount</td>
-             <td>string</td>
-              <td>is required</td>
-               <td>undefined</td>
-                <td>Root directory for the component, must exist in the backend filesystem.</td>
-        </tr>
-            <tr>
             <td>mountAlias</td>
              <td>string</td>
-              <td>required if you prefix your static files directory</td>
+              <td>might be required, depends</td>
                <td>empty sting</td>
-                <td>If you are using an alias/prefix for your static folder (usually happens when you serving content from multiple paths), you should pass it here.</td>
+                <td>If you use prefix with your static files directory (can happen if your serving your bundle from one folder and media from another) or use a cloud storage for your media and files. Has to be a valid url starting with http(s) or localhost followed by a port number.</td>
         </tr>         
           <tr>
             <td>namespace</td>
