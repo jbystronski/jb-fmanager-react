@@ -75,7 +75,6 @@ const App = () => {
         <ReactFileManager
           host="http://localhost:4000"
           isOpen={open}
-          mount="public"
           mountAlias="media"
           // other opts
         />
