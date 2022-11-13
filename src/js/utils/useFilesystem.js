@@ -82,6 +82,8 @@ export const useFilesystem = () => {
         method: "post",
         body,
       });
+
+      tree.setupTree(tree.getNode(target));
     } catch (error) {
       console.error(error);
     }
