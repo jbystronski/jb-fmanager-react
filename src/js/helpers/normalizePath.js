@@ -16,13 +16,14 @@ export const normalizePath = (host, ...args) => {
     domain = host;
   }
 
-  return (
+  const normalized =
     protocol +
     stripEdgeSlashes(domain) +
     args
       .filter((a) => !!a)
       .map(stripEdgeSlashes)
       .map((arg) => "/" + arg)
-      .join("")
-  );
+      .join("");
+
+  return normalized;
 };
