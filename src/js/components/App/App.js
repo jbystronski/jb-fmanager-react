@@ -15,6 +15,7 @@ export const App = ({
   stackIndex = 5000,
   id = "jb_fmanager",
   isOpen = false,
+  data,
   onClose,
   browserOnly = false,
   host,
@@ -40,6 +41,7 @@ export const App = ({
           namespace={namespace}
           maxUploadSize={maxUploadSize}
           mountAlias={mountAlias}
+          data={data}
         >
           <AppProvider>
             <FullscreenImageProvider>

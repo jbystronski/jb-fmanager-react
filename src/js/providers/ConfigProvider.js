@@ -4,6 +4,7 @@ import { ConfigContext } from "./ConfigContext";
 
 export const ConfigProvider = ({
   host,
+  data,
   browserOnly,
   mountAlias,
   namespace,
@@ -15,6 +16,7 @@ export const ConfigProvider = ({
       value={React.useMemo(
         () => ({
           host,
+          data,
           browserOnly,
           mountAlias,
           namespace,
