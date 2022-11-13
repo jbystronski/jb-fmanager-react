@@ -64,7 +64,10 @@ export const UploadList = () => {
       tooltip_title: "Upload all",
       events: {
         onClick: (e) => {
-          if (browserOnly) return uploadToTree(e);
+          if (browserOnly) {
+            alert("uploading not available in browser only mode");
+            return;
+          }
 
           if (!current.parent_id) return;
 

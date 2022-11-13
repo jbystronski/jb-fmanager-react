@@ -21,7 +21,13 @@ export const useFiletree = () => {
 
   const [currentView, setCurrentView] = useState(LIST);
   const { shared, setShared } = useFileshare();
-  const { browserOnly, mountAlias, namespace, host } = useConfig();
+  const {
+    browserOnly,
+    mountAlias,
+    namespace,
+    host,
+    data: testData,
+  } = useConfig();
 
   useEffect(() => {
     createTree();
@@ -87,9 +93,11 @@ export const useFiletree = () => {
 
   const createTree = async (focusedNode = null) => {
     try {
-      const data = await apiCall({
-        endpoint: normalizePath(host, namespace, "map"),
-      });
+      const data =
+        testData ||
+        (await apiCall({
+          endpoint: normalizePath(host, namespace, "map"),
+        }));
 
       setupTree(focusedNode, data);
     } catch (error) {
@@ -336,7 +344,7 @@ export const useFiletree = () => {
     () => ({
       fileTree,
       refresh,
-      uploadToTree,
+
       INFO,
       LIST,
       UPLOAD,
@@ -344,10 +352,6 @@ export const useFiletree = () => {
     }),
     [fileTree]
   );
-
-  const uploadToTree = () => {
-    alert("uploading not available in browser only mode");
-  };
 
   return {
     ...memoized,
