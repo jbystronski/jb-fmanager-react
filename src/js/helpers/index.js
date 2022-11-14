@@ -13,4 +13,3 @@ export * from "./resolveFileIcon";
 export * from "./tree";
 export * from "./views";
 export * from "./normalizePath";
-export * from "./fallbackData";

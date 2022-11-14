@@ -114,6 +114,13 @@ const App = () => {
                 <td>Callback function to unmount the element.</td>
         </tr>
           <tr>
+            <td>data</td>
+             <td>array</td>
+              <td>as per your needs</td>
+               <td>undefined</td>
+                <td>You can pass data explicitly to the component (map your public folder for instance) without fetching real data from external sources. If you want to map your local media files and other files from public / static folder you might need to adjust the mountAlias option properly, for instance: localhost:3000/images (to mount the public/images folder). Further I am explaining how the file tree structure should look like.</td>
+        </tr>
+          <tr>
             <td>host</td>
              <td>string</td>
               <td>Must be specified if you're fetching from external source / server.</td>
@@ -190,12 +197,106 @@ const App = () => {
 
 </div>
 
+<h5 style="margin:0 ; padding: 0;">File tree:</h5>
+
+<div style="padding: 16px;">
+
+```js
+
+// A basic file tree structure
+
+  [
+    id: 'root', // or public, or anything (the top level folder)
+    parent_id: null,
+    dir: true,
+    info: {
+       created: "20.10.2019 01:46:40",
+       mb: "0.05",
+       bytes: "63564",
+    },
+    children: [
+      {
+        id: "root/subfolder"
+        parent_id: "root",
+        dir: true,
+        info: {
+          //...
+        },
+        children: [
+          {
+            id: 'root/subfolder/some_image.jpg', // every id is built upon the parent's id
+            parent_id: 'root/subfolder',
+            dir: false,
+            info {
+                  //...
+            },
+            // other children
+          }
+
+        ]
+      }
+
+    ]
+  ]
+
+```
+
+</div>
+
+<h5 style="margin:0 ; padding: 0;">Custom themes:</h5>
+
+<div style="padding: 16px;">
+
+<p style="font-size: 15px">Including a custom light / dark theme is very easy. Just override the properties below, and pass the object with the rest of the options.</p>
+
+```js
+
+ {
+    overlay: "rgba(255,255,255,0.5)", // selected tile / record overlay
+    input: {
+      background: "transparent", // input background
+      border: "#08acff", // input border
+    },
+    surface1: "#101010", // global
+    surface2: "#6c6c6c", // file display
+    surface3: "#030303", // navigation tree
+    surface4: "#393939", // image / tile wrapper
+    surface5: "#393939", // row / record wrapper
+    surface6: "#141414", // context menu
+    surface7: "#141414", // tooltip
+    divider: "#3a3a3a", // border between sections
+    font1: "#fff", // main font
+    font2: "#c4c4c4", // secondary font
+    font3: "#fff", // navigation font
+    font4: "#fff", // contrast font
+    syntax1: "darkgoldenrod", // folders on the main screen
+    syntax2: "darkgoldenrod", // folders in the navigation tree
+    syntax3: "#fff", // files on the main screen
+    syntax4: "#fff", // files in the navigation tree
+    syntaxFocus: "#08acff", // selection, focus
+    primary: "#08acff", // primary color
+    secondary: "#c4c4c4", // secondary color
+    highlight: "rgba(255, 255, 255, 0.09)", // icon buttons background on hover
+    shadow1: "0px 8px 13px -10px rgba(0, 0, 0, 0.25)", // global & tile shadow
+    shadow2: "-5px 4px 12px -10px rgba(0, 0, 0, 1)", // dock shadow (right dock menu appears on smaller screens)
+    shadow3:
+      "rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px", // menu, modal, tooltip
+    shadow4:
+      "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px", // file rows
+  },
+
+```
+
+</div>
+
 <h5 style="margin:0 ; padding: 0;">Backend:</h5>
 
 <div style="padding: 16px;">
 <p style="font-size: 15px">The component is not bound nor should be to any backend implementation. It's concerned on accepting, parsing and displaying data. It communicates using http requests, but how they get processed is beyond it's concern. This means that you can use it with any http compatible solution. However, this section covers only <strong>nodejs</strong>.</p>
 
-<h6>Prebuilt setups:</h6>
+<h6>Prebuilt setups for node filesystem:</h6>
+
+<p style="font-size: 15px">These will setup all the necessary routes. Some additional steps might be required on you part depending on your case (setting up a static folder if you don't have that already, enabling cors maybe.).</p>
 
 <p style="font-size: 15px"><p>
 
@@ -208,16 +309,11 @@ jb-fmanager-fastify</a>
 <a style="font-size: 15px;" href="https://github.com/jbystronski/jb-fmanager-koa">
 jb-fmanager-koa</a>
 
-<p style="font-size: 15px">Out of the box working route setups. Some additional steps might be required on you part (cors, static serving), but you might have that already. The list should extend over time.</p>
-
 <h6>Service packages:</h6>
 
-<a style="font-size: 15px;" href="https://github.com/jbystronski/jb-fmanager-node-utils">jb-fmanager-node-utils</a>
+<p style="font-size: 15px">If you like more control you can use these packages directly:</p>
 
-<p style="font-size: 15px">Build for communicating with node filesystem (server storage).</p>
-
-<a style="font-size: 15px;" href="https://github.com/jbystronski/jb-fmanager-s3">jb-fmanager-s3</a>
-
-<p style="font-size: 15px">Build for communicating with AWS S3 cloud storage.</p>
+<p  style="font-size: 15px"><a style="font-size: 15px;" href="https://github.com/jbystronski/jb-fmanager-node-utils">jb-fmanager-node-utils</a> if you use a server / filesystem storage.</p>
+<p style="font-size: 15px"><a style="font-size: 15px;" href="https://github.com/jbystronski/jb-fmanager-s3">jb-fmanager-s3</a> if you use the AWS S3 storage.</p>
 
 </div>

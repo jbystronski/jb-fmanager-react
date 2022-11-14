@@ -14,5 +14,3 @@ const extensions = [
 export const isImage = (path) => {
   return extensions.includes(path.split(".").reverse()[0].toLowerCase());
 };
-
-// TODO add avif
