@@ -4,6 +4,9 @@
 
 <div style="padding: 16px;">
 <p style="font-size: 15px">This package provides an intuitive GUI to easily manage your storage filesystem, share and organize files / images across your application. It aims to reproduce the experience of using a desktop file manager in a web browser context.</p>
+
+<strong><a href="https://jb_fmanager_react_demo.surge.sh">DEMO</a><strong>
+
 </div>
 
 <h5 style="margin:0 ; padding: 0;">Install:</h5>
