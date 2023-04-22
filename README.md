@@ -67,7 +67,7 @@ export const MyComponent = () => {
 <p style="font-size: 15px">Main component</p>
 
 ```jsx
-import { ReactFileManger } from "@jb_fmanager/react";
+import { ReactFileManager } from "@jb_fmanager/react";
 
 // include it anywhere in your app
 
